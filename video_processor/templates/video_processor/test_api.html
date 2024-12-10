@@ -1,0 +1,22 @@
+<!-- test_api.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test API</title>
+</head>
+<body>
+<h1>Test Video API</h1>
+<form method="post" action="{% url 'test-api' %}">
+       {% csrf_token %}
+<label for="video_name">Enter Video Name:</label>
+<input type="text" id="video_name" name="video_name" placeholder="example.mp4" required>
+<button type="submit">Submit</button>
+</form>
+   {% if response %}
+<h2>API Response:</h2>
+<pre>{{ response }}</pre>
+   {% endif %}
+</body>
+</html>
